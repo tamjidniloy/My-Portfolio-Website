@@ -1,0 +1,10 @@
+const express = require('express');
+const c = require('../controllers/experienceController');
+const { protect } = require('../middleware/authMiddleware');
+const router = express.Router();
+router.get('/', c.getExperiences);
+router.get('/admin/all', protect, c.getAdminExperiences);
+router.post('/', protect, c.createExperience);
+router.put('/:id', protect, c.updateExperience);
+router.delete('/:id', protect, c.deleteExperience);
+module.exports = router;
