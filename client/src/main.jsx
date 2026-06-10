@@ -4,4 +4,11 @@ import { BrowserRouter } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import App from "./App.jsx";
 import "./styles/index.css";
-ReactDOM.createRoot(document.getElementById("root")).render(<React.StrictMode><BrowserRouter><App /><Toaster position="top-right" /></BrowserRouter></React.StrictMode>);
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+      <Toaster position="top-right" />
+    </BrowserRouter>
+  </React.StrictMode>,
+);

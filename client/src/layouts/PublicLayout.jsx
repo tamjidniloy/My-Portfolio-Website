@@ -1,2 +1,26 @@
 import { Link, Outlet } from "react-router-dom";
-export default function PublicLayout(){return <><nav className="fixed top-0 z-50 w-full glass"><div className="mx-auto max-w-7xl px-5 py-4 flex items-center justify-between"><Link to="/" className="font-black text-xl gradient-text">Tamjid Niloy</Link><div className="hidden md:flex gap-6 text-sm text-slate-300"><a href="/#projects">Projects</a><a href="/#skills">Skills</a><a href="/#contact">Contact</a><Link to="/admin/login">Admin</Link></div></div></nav><main className="pt-20"><Outlet/></main><footer className="border-t border-white/10 py-8 text-center text-slate-400">© {new Date().getFullYear()} Tamjid Niloy. Built with MERN.</footer></>}
+export default function PublicLayout() {
+  return (
+    <>
+      <nav className="fixed top-0 z-50 w-full glass">
+        <div className="mx-auto max-w-7xl px-5 py-4 flex items-center justify-between">
+          <Link to="/" className="font-black text-xl gradient-text">
+            Tamjid Niloy
+          </Link>
+          <div className="hidden md:flex gap-6 text-sm text-slate-300">
+            <a href="/#projects">Projects</a>
+            <a href="/#skills">Skills</a>
+            <a href="/#contact">Contact</a>
+            <Link to="/admin/login">Admin</Link>
+          </div>
+        </div>
+      </nav>
+      <main className="pt-20">
+        <Outlet />
+      </main>
+      <footer className="border-t border-white/10 py-8 text-center text-slate-400">
+        © {new Date().getFullYear()} Tamjid Niloy. Built with MERN.
+      </footer>
+    </>
+  );
+}

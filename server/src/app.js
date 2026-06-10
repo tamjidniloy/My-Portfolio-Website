@@ -25,9 +25,23 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(mongoSanitize());
 if (env.nodeEnv === "development") app.use(morgan("dev"));
-app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 300, message: "Too many requests. Please try again later." }));
-app.get("/", (req,res)=>res.status(200).json({success:true,message:"Portfolio CMS API is running"}));
-app.get("/api/health", (req,res)=>res.status(200).json({success:true,message:"Server health check passed"}));
+app.use(
+  rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 300,
+    message: "Too many requests. Please try again later.",
+  }),
+);
+app.get("/", (req, res) =>
+  res
+    .status(200)
+    .json({ success: true, message: "Portfolio CMS API is running" }),
+);
+app.get("/api/health", (req, res) =>
+  res
+    .status(200)
+    .json({ success: true, message: "Server health check passed" }),
+);
 app.use("/api/auth", authRoutes);
 app.use("/api/profile", profileRoutes);
 app.use("/api/projects", projectRoutes);

@@ -1,6 +1,9 @@
 const cloudinary = require("../config/cloudinary");
 const uploadToCloudinary = async (filePath, folder = "portfolio") => {
-  const result = await cloudinary.uploader.upload(filePath, { folder, resource_type: "auto" });
+  const result = await cloudinary.uploader.upload(filePath, {
+    folder,
+    resource_type: "auto",
+  });
   return { url: result.secure_url, publicId: result.public_id };
 };
 const deleteFromCloudinary = async (publicId, resourceType = "image") => {

@@ -1,5 +1,10 @@
 const express = require("express");
-const { createMessage, getMessages, markRead, deleteMessage } = require("../controllers/messageController");
+const {
+  createMessage,
+  getMessages,
+  markRead,
+  deleteMessage,
+} = require("../controllers/messageController");
 const { protect } = require("../middleware/authMiddleware");
 const router = express.Router();
 router.post("/", createMessage);
