@@ -1,10 +1,10 @@
-const express = require('express');
-const c = require('../controllers/educationController');
-const { protect } = require('../middleware/authMiddleware');
+const express = require("express");
+const c = require("../controllers/educationController");
+const { protect } = require("../middleware/authMiddleware");
 const router = express.Router();
-router.get('/', c.getEducations);
-router.get('/admin/all', protect, c.getAdminEducations);
-router.post('/', protect, c.createEducation);
-router.put('/:id', protect, c.updateEducation);
-router.delete('/:id', protect, c.deleteEducation);
+router.get("/", c.getEducations);
+router.get("/admin/all", protect, c.getAdminEducations);
+router.post("/", protect, c.createEducation);
+router.put("/:id", protect, c.updateEducation);
+router.delete("/:id", protect, c.deleteEducation);
 module.exports = router;

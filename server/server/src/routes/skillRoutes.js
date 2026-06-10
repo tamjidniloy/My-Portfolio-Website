@@ -1,10 +1,10 @@
-const express = require('express');
-const c = require('../controllers/skillController');
-const { protect } = require('../middleware/authMiddleware');
+const express = require("express");
+const c = require("../controllers/skillController");
+const { protect } = require("../middleware/authMiddleware");
 const router = express.Router();
-router.get('/', c.getSkills);
-router.get('/admin/all', protect, c.getAdminSkills);
-router.post('/', protect, c.createSkill);
-router.put('/:id', protect, c.updateSkill);
-router.delete('/:id', protect, c.deleteSkill);
+router.get("/", c.getSkills);
+router.get("/admin/all", protect, c.getAdminSkills);
+router.post("/", protect, c.createSkill);
+router.put("/:id", protect, c.updateSkill);
+router.delete("/:id", protect, c.deleteSkill);
 module.exports = router;
