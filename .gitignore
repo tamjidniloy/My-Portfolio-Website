@@ -1,0 +1,11 @@
+client/node_modules
+server/node_modules
+client/.env
+server/.env
+server/uploads
+client/dist
+client/build
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
